@@ -166,7 +166,6 @@ cython_debug/
 #.idea/
 
 .DS_Store
-static/
 
 # Project-Specific Ignores
 api_keys.py
