@@ -99,9 +99,8 @@ function init() {
     // Use d3 to select the dropdown with id of `#selDataset`
     let dropdown = d3.select("#selDataset");
     // Use the list of sample names to populate the select options
-    for (let i = 0; i < names.length; i++) {
-      dropdown.append("option").text(names[i]);
-    }
+    names.forEach((val) => dropdown.append("option").text(val));
+
     // Get the first sample from the list
     let firstSample = names[0];
     // Build charts and metadata panel with the first sample
