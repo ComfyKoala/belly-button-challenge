@@ -7,12 +7,7 @@ function buildMetadata(sample) {
     let metadata = data.metadata;
 
     // Filter the metadata for the object with the desired sample number
-    let selMetadata = "";
-    for (let i = 0; i < metadata.length; i++) {
-      if (metadata[i].id == sample) {
-        selMetadata = metadata[i];
-      }
-    }
+    let selMetadata = metadata.filter((val) => val.id == sample)[0];
 
     // Use d3 to select the panel with id of `#sample-metadata`
     let divSample = d3.select("#sample-metadata");
@@ -38,12 +33,7 @@ function buildCharts(sample) {
     let samples = data.samples;
 
     // Filter the samples for the object with the desired sample number
-    let selSample = "";
-    for (let i = 0; i < samples.length; i++) {
-      if (samples[i].id == sample) {
-        selSample = samples[i];
-      }
-    }
+    let selSample = samples.filter((val) => val.id == sample)[0];
 
     // Get the otu_ids, otu_labels, and sample_values
     let otu_ids = selSample.otu_ids;
@@ -58,6 +48,7 @@ function buildCharts(sample) {
       mode: "markers",
       marker: {
         size: sample_values,
+        opacity: 0.7,
       },
     };
 
