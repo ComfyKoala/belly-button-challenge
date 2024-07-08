@@ -49,6 +49,7 @@ function buildCharts(sample) {
       marker: {
         size: sample_values,
         opacity: 0.7,
+        color: otu_ids,
       },
     };
 
